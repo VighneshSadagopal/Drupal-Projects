@@ -1,0 +1,6 @@
+name: Drupal Custom Cache
+type: module
+description: 'A custom module for Drupal Caching Exercise'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies: []
