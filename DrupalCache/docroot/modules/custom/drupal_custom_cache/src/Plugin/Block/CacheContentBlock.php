@@ -83,10 +83,11 @@ class CacheContentBlock extends BlockBase implements ContainerFactoryPluginInter
     $nids = $request->execute();
     $nodes = $node_storage->loadMultiple($nids);
     $cache_tags = [];
+    $mail = $this->currentUser->getEmail() ?? 'Anonmoyous';
 
 
     // Add email of current user.
-    $output = '<p>' . $this->currentUser->isAnonymous() ? 'No Email' : $this->currentUser->getEmail() . '</p>';
+    $output = '<p>' . $mail . '</p>';
 
     $output .= '<ul>';
 
