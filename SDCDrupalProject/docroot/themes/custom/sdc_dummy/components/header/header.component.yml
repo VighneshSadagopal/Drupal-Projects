@@ -1,0 +1,30 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Header
+status: stable
+props:
+  type: object
+  properties:
+    site_name:
+      type: string
+      title: site_name
+      # @todo Add examples here.
+      examples: []
+    logo:
+      type: string
+      title: logo
+      description: Logo of site.
+      # @todo Add examples here.
+      examples: []
+    menu:
+      type: array
+      title: Menu
+      description: Navigation Menu
+      items:
+        type: object
+        properties:
+          title:
+            type: string
+          link:
+            type: string
+      # @todo Add examples here.
+      examples: []

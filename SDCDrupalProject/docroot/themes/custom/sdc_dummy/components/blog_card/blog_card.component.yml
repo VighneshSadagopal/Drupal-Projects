@@ -1,0 +1,59 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: Blog Card
+status: stable
+props:
+  type: object
+  properties:
+    heading:
+      type: string
+      title: Heading
+      description: The Head title of the blog
+      # @todo Add examples here.
+      examples: []
+    description:
+      type: string
+      title: Description
+      description: Description data of the Blog.
+      # @todo Add examples here.
+      examples: []
+    image:
+      type: string
+      title: Image URL
+      examples: []
+    cta_text:
+      type: string
+      title: CTA Text
+      description: Call to action text
+      examples: []
+    cta_link:
+      type: string
+      title: CTA Link
+      description: Call to action link
+      examples: []
+    alignment:
+      type: string
+      title: Alignment
+      description: Alignment of the blog card
+      enum:
+        - left
+        - center
+      default: left
+      examples: []
+    blog_variation:
+      type: string
+      title: 'Blog Variation'
+      enum:
+        - 'variation_one'
+        - 'variation_two'
+      default: 'variation_one'
+      examples: []
+slots:
+    before_title:
+      title: 'Before Title'
+      description: 'Content that appears before the title.'
+    after_title:
+      title: 'After Title'
+      description: 'Content that appears after the title.'
+    extra_content:
+      title: 'Extra Content'
+      description: 'Additional content in the card.'

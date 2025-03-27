@@ -1,0 +1,13 @@
+id: card
+label: 'Card Component'
+status: stable
+description: 'A reusable card component'
+props:
+  type: object
+  properties:
+    title:
+      type: string
+    body:
+      type: string
+    image:
+      type: string

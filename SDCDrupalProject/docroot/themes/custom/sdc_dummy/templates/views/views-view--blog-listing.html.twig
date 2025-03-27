@@ -1,0 +1,25 @@
+<main class="blog-list">
+	{% set data = rows.0 %}
+
+	{% for row in data['#rows'] %}
+
+		{% set node = row['#row']._entity%}
+
+		{% embed 'sdc_dummy:blog_card' with {
+      title: node.label(),  
+      description: node.get('body').summary ?: node.get('body').value|striptags|slice(0, 200) ~ '...',
+      cta_text: 'Read More',
+      alignment: 'center',
+      blog_variation: 'variation_one'
+    } only %}
+
+			{% block after_title %}
+				<p class="blog-card__meta">Published on
+					{{ node.get('field_date').value|date('F d, Y') }}
+					by
+					{{ node.get('field_author').value }}</p>
+			{% endblock %}
+
+		{% endembed %}
+	{% endfor %}
+</main>

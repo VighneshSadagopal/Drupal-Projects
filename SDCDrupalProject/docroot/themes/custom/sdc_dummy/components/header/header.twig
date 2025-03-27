@@ -1,0 +1,16 @@
+<div {{ attributes }}>
+  <header class="header">
+  <div class="header__logo">
+    <img src="{{ logo }}" alt="{{ site_name }}" />
+    <h1>{{ site_name }}</h1>
+  </div>
+  <nav class="header__menu">
+    <ul>
+      {% for item in menu %}
+        <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>
+
+</div>
