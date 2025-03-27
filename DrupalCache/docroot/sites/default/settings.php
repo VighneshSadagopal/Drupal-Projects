@@ -878,3 +878,20 @@ if (getenv('IS_DDEV_PROJECT') == 'true' && file_exists(__DIR__ . '/settings.ddev
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
+
+$settings['memcache']['servers'] = ['memcached:11211' => 'default'];
+$settings['memcache']['bins'] = ['default' => 'default'];
+
+$settings['memcache']['key_prefix'] = 'ddev_';
+
+// Use Memcache as the default backend for cache bins.
+$settings['cache']['default'] = 'cache.backend.memcache';
+$settings['cache']['bins']['render'] = 'cache.backend.memcache'; // For render cache
+$settings['cache']['bins']['page'] = 'cache.backend.memcache'; // For page cache
+$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.memcache'; // Dynamic page cache
+
+// Assign your custom bin to Memcache.
+$settings['cache']['bins']['custom_memcache_bin'] = 'cache.backend.memcache';
+
+// Optional: Include Memcache Admin UI
+$settings['container_yamls'][] = 'modules/contrib/memcache/memcache.services.yml';
