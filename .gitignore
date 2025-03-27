@@ -92,3 +92,5 @@
 
 #Ignore keys directory
 /DrupalCache/keys/*
+
+*storybook.log
