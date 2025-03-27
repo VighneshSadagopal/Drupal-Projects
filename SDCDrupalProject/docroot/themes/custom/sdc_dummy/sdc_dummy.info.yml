@@ -1,0 +1,8 @@
+name: 'SDC dummy theme'
+type: theme
+description: 'A custom theme with SDC support'
+core_version_requirement: ^10 || ^11
+base theme: olivero
+package: Custom
+libraries:
+  - sdc_dummy/global-styling
